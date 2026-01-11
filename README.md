@@ -149,11 +149,14 @@ sudo systemctl restart astdb.timer
 
 ### 🗑️ Uninstallation
 
-```bash
-# Uninstall (keeps configuration files)
-sudo apt remove connectlogs-asl3
 
-# Complete uninstall (removes everything)
+Uninstall (keeps configuration files)
+```bash
+sudo apt remove connectlogs-asl3
+```
+
+Complete uninstall (removes everything)
+```bash
 sudo apt purge connectlogs-asl3
 ```
 
@@ -408,11 +411,14 @@ sudo systemctl restart astdb.timer
 
 ### 🗑️ Désinstallation
 
-```bash
-# Désinstaller (garde les fichiers de configuration)
-sudo apt remove connectlogs-asl3
 
-# Désinstaller complètement (supprime tout)
+Désinstaller (garde les fichiers de configuration)
+```bash
+sudo apt remove connectlogs-asl3
+```
+
+Désinstaller complètement (supprime tout)
+```bash
 sudo apt purge connectlogs-asl3
 ```
 
