@@ -15,10 +15,10 @@ Connection Logger and ASTDB updater for AllStarLink 3
 
 ### 📋 Description
 
-Logfils-asl3 is a connection logging system for AllStarLink 3.<br>
+**Logfils-asl3** is a connection logging system for AllStarLink 3.<br>
 It is compatible with the **ConnectLogs application** as it supports Supermon formats.<br>
 
-Logfils-asl3 automatically manages:
+**Logfils-asl3** automatically manages:
 - **Connection logging** for AllStar, EchoLink, IRLP
 - **Automatic updates** of the node database (ASTDB)
 - **Systemd service** with timer for periodic updates
@@ -220,10 +220,10 @@ Système de journalisation des connexions et mise à jour ASTDB pour AllStarLink
 
 ### 📋 Description
 
-Logfils-asl3 est un système de journalisation des connexions pour AllStarLink 3.<br> 
+**Logfils-asl3** est un système de journalisation des connexions pour AllStarLink 3.<br> 
 Il est compatible avec **l'application ConnectLogs**, car elle prend en charge les formats Supermon.<br>
 
-Logfils-asl3 gère automatiquement :
+**Logfils-asl3** gère automatiquement :
 - **Journalisation des connexions** AllStar, EchoLink, IRLP
 - **Mise à jour automatique** de la base de données des nœuds (ASTDB)
 - **Service systemd** avec timer pour les mises à jour périodiques
