@@ -181,7 +181,7 @@ sudo chmod 664 /var/log/asterisk/connectlog
 The log format is Supermon compatible:
 
 ```
-DATE == NODE STATUS TYPE REMOTE_NODE DIRECTION INFO
+DATE == NODE STATUS TYPE REMOTE_NODE DIRECTION (IP)
 ```
 
 Examples:
