@@ -24,6 +24,16 @@ It is compatible with the **[ConnectLogs application](https://github.com/CN8VX/C
 - **Systemd service** with timer for periodic updates
 - **Log rotation** via logrotate
 
+### ✨ What's new in v2.0
+
+- ✅ Native ASL3 detection (`asl3-update-nodelist.service`)
+- ✅ Unified ASTDB path: `/var/lib/asterisk/astdb.txt`
+- ✅ Smart install / update detection with confirmation prompt
+- ✅ IP address displayed on connect: `(71.199.168.192)` / `()`
+- ✅ Smart uninstall: only removes what was installed by logfils
+- ✅ `astdb.txt` preserved if it pre-existed before installation
+- ✅ Full English interface
+
 ### ✨ Features
 
 - ✅ Automatic detection of connection type (AllStar/EchoLink/IRLP)
@@ -47,12 +57,12 @@ It is compatible with the **[ConnectLogs application](https://github.com/CN8VX/C
 1. **Download the package**
 ```bash
 cd /tmp
-wget https://github.com/CN8VX/logfils-asl3/releases/download/v1.0/logfils-asl3_1.0.deb
+wget https://github.com/CN8VX/logfils-asl3/releases/download/v2.0/logfils-asl3_2.0.deb
 ```
 
 2. **Install the package**
 ```bash
-sudo dpkg -i logfils-asl3_1.0.deb
+sudo dpkg -i logfils-asl3_2.0.deb
 ```
 
 3. **If needed, resolve dependencies**
@@ -94,8 +104,8 @@ tail -f /var/log/asterisk/connectlog
 
 Example output:
 ```
-Sun Jan 12 10:30:45 UTC 2025 == 1999 Connected AllStar 2000 <=IN== (:)
-Sun Jan 12 10:35:12 UTC 2025 == 1999 Disconnected AllStar 2000 <=IN== (:)
+Sat Mar 28 13:12:12 +01 2026 == 1999 Connected AllStar 602810 =OUT=> (71.199.168.192)
+Sat Mar 28 13:12:40 +01 2026 == 1999 Disconnected AllStar 602810 =v= ()
 ```
 
 ### 🗑️ Uninstallation
@@ -176,9 +186,9 @@ DATE == NODE STATUS TYPE REMOTE_NODE DIRECTION INFO
 
 Examples:
 ```
-Sun Jan 12 10:30:45 UTC 2025 == 1999 Connected AllStar 2000 <=IN== (:)
-Sun Jan 12 10:30:50 UTC 2025 == 1999 Connected EchoLink 123456 =OUT=> CALLSIGN [EchoLink 123456] (Location)
-Sun Jan 12 10:31:00 UTC 2025 == 1999 Disconnected IRLP 8500 <=IN== 
+Sat Mar 28 13:12:12 +01 2026 == 1999 Connected    AllStar 602810 =OUT=> (71.199.168.192)
+Sat Mar 28 13:12:40 +01 2026 == 1999 Disconnected AllStar 602810 =v=   ()
+Sun Jan 12 10:30:50 UTC 2025 == 1999   Connected    EchoLink 123456 =OUT=> CALLSIGN [EchoLink 123456] (Location) 
 ```
 
 ### 📄 License
@@ -216,6 +226,8 @@ For any questions or issues:
 <a name="français"></a>
 ## <img src="https://flagcdn.com/w20/fr.png" width="30"/> Français
 
+# Logfils pour ASL3
+
 Système de journalisation des connexions et mise à jour ASTDB pour AllStarLink 3
 
 ### 📋 Description
@@ -228,6 +240,16 @@ Il est compatible avec **[l'application ConnectLogs](https://github.com/CN8VX/Co
 - **Mise à jour automatique** de la base de données des nœuds (ASTDB)
 - **Service systemd** avec timer pour les mises à jour périodiques
 - **Rotation des logs** via logrotate
+
+### ✨ Nouveautés v2.0
+
+- ✅ Détection du service ASL3 natif (`asl3-update-nodelist.service`)
+- ✅ Chemin ASTDB unifié : `/var/lib/asterisk/astdb.txt`
+- ✅ Détection intelligente installation / mise à jour avec confirmation
+- ✅ Affichage IP à la connexion : `(71.199.168.192)` / `()`
+- ✅ Désinstallation intelligente : supprime uniquement ce qui a été installé
+- ✅ `astdb.txt` conservé s'il existait avant l'installation
+- ✅ Interface entièrement en anglais
 
 ### ✨ Fonctionnalités
 
@@ -252,12 +274,12 @@ Il est compatible avec **[l'application ConnectLogs](https://github.com/CN8VX/Co
 1. **Télécharger le paquet**
 ```bash
 cd /tmp
-wget https://github.com/CN8VX/logfils-asl3/releases/download/v1.0/logfils-asl3_1.0.deb
+wget https://github.com/CN8VX/logfils-asl3/releases/download/v2.0/logfils-asl3_2.0.deb
 ```
 
 2. **Installer le paquet**
 ```bash
-sudo dpkg -i logfils-asl3_1.0.deb
+sudo dpkg -i logfils-asl3_2.0.deb
 ```
 
 3. **Si besoin, résoudre les dépendances**
@@ -299,8 +321,8 @@ tail -f /var/log/asterisk/connectlog
 
 Exemple de sortie :
 ```
-Sun Jan 12 10:30:45 UTC 2025 == 1999 Connected AllStar 2000 <=IN== (:)
-Sun Jan 12 10:35:12 UTC 2025 == 1999 Disconnected AllStar 2000 <=IN== (:)
+Sat Mar 28 13:12:12 +01 2026 == 1999 Connected AllStar 602810 =OUT=> (71.199.168.192)
+Sat Mar 28 13:12:40 +01 2026 == 1999 Disconnected AllStar 602810 =v= ()
 ```
 
 ### 🗑️ Désinstallation
@@ -376,14 +398,14 @@ sudo chmod 664 /var/log/asterisk/connectlog
 Le format de log est compatible Supermon :
 
 ```
-DATE == NODE STATUS TYPE REMOTE_NODE DIRECTION INFO
+DATE == NODE STATUS TYPE REMOTE_NODE DIRECTION (IP)
 ```
 
 Exemples :
 ```
-Sun Jan 12 10:30:45 UTC 2025 == 1999 Connected AllStar 2000 <=IN== (:)
-Sun Jan 12 10:30:50 UTC 2025 == 1999 Connected EchoLink 123456 =OUT=> CALLSIGN [EchoLink 123456] (Location)
-Sun Jan 12 10:31:00 UTC 2025 == 1999 Disconnected IRLP 8500 <=IN== 
+Sat Mar 28 13:12:12 +01 2026 == 1999 Connected    AllStar 602810 =OUT=> (71.199.168.192)
+Sat Mar 28 13:12:40 +01 2026 == 1999 Disconnected AllStar 602810 =v=   ()
+Sun Jan 12 10:30:50 UTC 2025 == 1999   Connected    EchoLink 123456 =OUT=> CALLSIGN [EchoLink 123456] (Location)
 ```
 
 ### 📄 Licence
